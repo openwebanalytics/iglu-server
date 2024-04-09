@@ -101,7 +101,7 @@ jobs:
       id: meta
       uses: docker/metadata-action@v3
       with:
-        images: snowplow/iglu-server
+        images: openwebanalytics/iglu-server
         tags: |
           type=raw,value=latest,enable=${{ !contains(steps.ver.outputs.tag, 'rc') }}
           type=raw,value=latest-focal,enable=${{ !contains(steps.ver.outputs.tag, 'rc') }}
@@ -113,7 +113,7 @@ jobs:
       id: meta-distroless
       uses: docker/metadata-action@v3
       with:
-        images: snowplow/iglu-server
+        images: openwebanalytics/iglu-server
         tags: |
           type=raw,value=latest-distroless,enable=${{ !contains(steps.ver.outputs.tag, 'rc') }}
           type=raw,value=${{ steps.ver.outputs.tag }}-distroless
@@ -144,7 +144,7 @@ jobs:
       uses: snyk/actions/docker@master
       if: ${{ !contains(steps.ver.outputs.tag, 'rc') }}
       with:
-        image: "snowplow/iglu-server:${{ steps.ver.outputs.tag }}-distroless"
+        image: "openwebanalytics/iglu-server:${{ steps.ver.outputs.tag }}-distroless"
         args: "--app-vulns --org=data-processing-new"
         command: monitor
       env:
