@@ -1,3 +1,6 @@
+# Fork
+A fork of Snowplow's IGLU server; master reset to when the code base was last licensed under the **[Apache License, Version 2.0][license]**. 
+
 # Iglu Server
 
 A RESTful schema registry, allowing users to publish, test and serve schemas via an easy-to-use RESTful interface.
